@@ -19,17 +19,24 @@ public class Main {
         Worker worker1 = new Worker(2000, "Igor");
 
         Manager manager = new Manager(5000, "Oleg", 2);
+        Manager manager1 = new Manager(5000, "Petia",2);
 
         Director director = new Director(10000, "Sergei", 3);
 
-        Employee [] employees = {worker, worker1, manager, director};
+        Employee[] employees = {worker, worker1, manager, manager1, director};
+        Manager[] managers = {manager, manager1};
 
 
         System.out.println(Utils.searchName(employees, "Vasia"));
         System.out.println(Utils.namePartSearch(employees,"I"));
-        System.out.println(Utils.budget(employees));
+        System.out.println("Budget = " + Utils.budget(employees));
+        System.out.println("MinSalary = " + Utils.minSalary(employees));
+        System.out.println("MaxSalary = " + Utils.maxSalary(employees));
+        System.out.println("MinSubManager = " + Utils.minSubManager(managers));
+        System.out.println("MaxSubManager = " + Utils.maxSubManager(managers));
 
-        System.out.println(manager.getSalary());
-        System.out.println(director.getSalary());
+        System.out.println("SalaryManager = " + manager.getSalary());
+        System.out.println("SalaryDirector = " + director.getSalary());
+
     }
 }

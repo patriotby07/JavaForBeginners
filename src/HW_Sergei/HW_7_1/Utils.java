@@ -42,5 +42,47 @@ public class Utils {
         return  sum;
     }
 
+    public static int minSalary (Employee [] employees) {
+        int min = Integer.MAX_VALUE;
+
+        for (int i = 0; i < employees.length; i++) {
+            if (employees[i].getSalary() < min) {
+                min = employees[i].getSalary();
+            }
+        }
+        return  min;
+    }
+    public static int maxSalary (Employee [] employees) {
+        int max = Integer.MIN_VALUE;
+
+        for (int i = 0; i < employees.length; i++) {
+            if (employees[i].getSalary() > max) {
+                max = employees[i].getSalary();
+            }
+        }
+        return  max;
+    }
+
+    public static int minSubManager (Manager[] managers) {
+        int min = Integer.MAX_VALUE;
+
+        for (int i = 0; i < managers.length; i++){
+            if (managers[i].getNumberOfSubordinates() < min) {
+                min = managers[i].getNumberOfSubordinates();
+            }
+        }
+        return min;
+    }
+
+    public static int maxSubManager (Manager[] managers) {
+        int max = Integer.MIN_VALUE;
+
+        for (int i = 0; i < managers.length; i++){
+            if (managers[i].getNumberOfSubordinates() > max) {
+                max = managers[i].getNumberOfSubordinates();
+            }
+        }
+        return max;
+    }
 }
 

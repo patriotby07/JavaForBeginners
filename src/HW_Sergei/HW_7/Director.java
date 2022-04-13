@@ -11,7 +11,8 @@ public class Director extends Manager {
         if (numberOfSubordinates == 0) {
             return super.getSalary();
         }else {
-            return super.getSalary() + super.getSalary()  * (numberOfSubordinates / 100 * 9);
+            return super.getSalary() + getSalary()  * (numberOfSubordinates / 100 * 9);
         }
     }
+
 }
