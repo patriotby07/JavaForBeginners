@@ -17,8 +17,13 @@ public class SalaryTest {
         Employee[] e = {john, jone, vasia};
 
         Salary salary = new Salary();
+        Person person = new Person("John Doe", 30, "male");
+        Person person1 = new Person("Jone Doe", 30, "female");
+
         System.out.println("sum of salaries = " + salary.getSum(employee));
         System.out.println("sum of salaries e = " + salary.getSum(e));
-
+        System.out.println(person.getName());
+        System.out.println(person1.getName());
+        System.out.println(john.isSameName(vasia));
     }
 }

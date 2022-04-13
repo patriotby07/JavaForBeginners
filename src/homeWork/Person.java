@@ -16,6 +16,11 @@ public class Person {
     }
 
     public String getName() {
-        return name;
+        if (this.gender.equals("male")){
+            return "Mr. " + this.name;
+        }else if (this.gender.equals("female")){
+            return "Mrs. " + this.name;
+        }else
+            return "Eror";
     }
 }

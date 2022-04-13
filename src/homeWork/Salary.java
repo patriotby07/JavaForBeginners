@@ -13,5 +13,4 @@ public class Salary {
         }
         return sum;
     }
-
 }

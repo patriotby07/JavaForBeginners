@@ -7,6 +7,8 @@ package homeWork;
 
 public class Employee {
 
+    Person person;
+
     String name;
     int age;
     String gender;
@@ -20,6 +22,6 @@ public class Employee {
     }
 
     boolean isSameName(Employee employee){
-        return true;
+        return name.equals(employee.name);
     }
 }
