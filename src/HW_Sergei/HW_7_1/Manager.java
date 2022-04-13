@@ -22,10 +22,6 @@ public class Manager extends Worker {
         return numberOfSubordinates;
     }
 
-    public void setNumberOfSubordinates(int numberOfSubordinates) {
-        this.numberOfSubordinates = numberOfSubordinates;
-    }
-
     @Override
     public int getSalary() {
         if (numberOfSubordinates == 0) {
