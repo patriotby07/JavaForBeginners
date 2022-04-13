@@ -15,9 +15,9 @@ public class Manager extends Worker {
     public int getSalary() {
         if (numberOfSubordinates == 0) {
             return super.getSalary();
-        }else {
+        }else
             return super.getSalary() + super.getSalary() * (numberOfSubordinates / 100 * 3);
-        }
+
     }
 
     public void setNumberOfSubordinates(int numberOfSubordinates) {
