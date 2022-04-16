@@ -1,4 +1,4 @@
-package Lesson;
+package Lesson.lessons1to7;
 
 public class Lesson4 {
     public static void print (String text){
