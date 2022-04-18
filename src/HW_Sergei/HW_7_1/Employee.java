@@ -9,25 +9,27 @@ public class Employee {
      setName
      getSalary - получить зарплату
      */
-//    private int baseSalary;
+    private double baseSalary;
     private int salary;
     private String name;
+
 
     public Employee(int salary, String name) {
         this.salary = salary;
         this.name = name;
+        this.baseSalary = baseSalary;
     }
-//    public void setBaseSalary(int baseSalary) {
-//        this.baseSalary = baseSalary;
-//    }
+    public void setBaseSalary(int baseSalary) {
+        this.baseSalary = baseSalary;
+    }
 
     public void setName(String name) {
         this.name = name;
     }
 
-//    public int getBaseSalary() {
-//        return baseSalary;
-//    }
+    public double getBaseSalary() {
+        return baseSalary;
+    }
 
     public int getSalary() {
         return salary;

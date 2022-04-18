@@ -1,4 +1,4 @@
-package HW_Irina;
+package HW_Irina.school;
 
 public class Student {
 
