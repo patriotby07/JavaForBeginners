@@ -188,4 +188,86 @@ public class Utils {
                 System.out.print(array[i] + ", ");
         }
     }
+
+    public static boolean checkForEmptyArray (int[] array) {
+        if (array.length != 0) {
+            return true;
+        }else {
+            return false;
+        }
+    }
+
+    public static boolean checkForEmptyArray (double[] array) {
+        if (array.length != 0) {
+            return true;
+        }else {
+            return false;
+        }
+    }
+
+    public static boolean checkForEmptyArray (String[] array) {
+        if (array.length != 0) {
+            return true;
+        }else {
+            return false;
+        }
+    }
+
+    public static boolean checkForEmptyArray (boolean[] array) {
+        if (array.length != 0) {
+            return true;
+        }else {
+            return false;
+        }
+    }
+
+    public static boolean checkPositiveNumbers (double[] array) {
+
+        for (int i = 0; i < array.length; i++) {
+            if (array[i] < 0.0) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    public static boolean checkPositiveNumbers (int[] array) {
+
+        for (int i = 0; i < array.length; i++) {
+            if (array[i] < 0) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    public static int giveMeAmountOfEvenNumbersIfNoNegatives (int[] array) {
+        if (!containsNegativeNumbers(array) && array.length != 0) {
+            int counter = 0;
+            for (int i = 0; i < array.length; i++) {
+                if (array[i] % 2 == 0) {
+                    counter++;
+                }
+            }
+            return counter;
+        }
+        return Integer.MIN_VALUE;
+    } //проверка на наличие негативных, что массив не пустой и выводит только четные числа.
+
+    public static boolean containsNegativeNumbers (int[] array) {
+        for (int i = 0; i < array.length; i++) {
+            if (array[i] <= 0) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public static Object[] allDataType (Object ... v) {
+        Object[] arr = new Object[v.length];
+        for (int i = 0; i < v.length; i++) {
+            arr[i] = v[i];
+        }
+        return arr;
+    } // можно всунуть любой тип данных любой длинны
 }
