@@ -97,7 +97,7 @@ public class HW8 {
 
         for (int i = 0; i < array.length; i++) {
             if (array[i] % 2 != 0) {
-                masNechet[indexNechet] = array[i];
+                masNechet[indexNechet++] = array[i];
                 indexNechet++;
             }
         }

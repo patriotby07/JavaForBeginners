@@ -57,3 +57,21 @@ public class MonthUtils {
         return MONTH_ARRAY;
     }
 }
+
+//   private static final Month JAN = new Month("Jan", 31, 21);  // ВАРИАНТ СЕРГЕЯ
+//            private static final Month FEB = new Month("Feb", 28, 20);
+//            private static final Month MAR = new Month("Mar", 31, 23);
+//            private static final Month APR = new Month("Apr", 30, 22);
+//            private static final Month MAY = new Month("May", 31, 21);
+//            private static final Month JUN = new Month("Jun", 30, 22);
+//            private static final Month JUL = new Month("Jul", 31, 22);
+//            private static final Month AUG = new Month("Aug", 31, 22);
+//            private static final Month SEP = new Month("Sep", 30, 22);
+//            private static final Month OCT = new Month("Oct", 31, 21);
+//            private static final Month NOV = new Month("Nov", 30, 22);
+//            private static final Month DEC = new Month("Dec", 31, 23);
+//
+//
+//    public static final Month [] YEAR = {
+//            JAN , FEB, MAR, APR,MAY, JUN, JUL, AUG, SEP, OCT, NOV,DEC
+//    };

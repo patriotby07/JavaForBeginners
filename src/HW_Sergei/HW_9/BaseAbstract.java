@@ -4,7 +4,7 @@ public abstract class BaseAbstract extends Worker {
 
     private int numberOfSubordinates;
 
-    public abstract int getIndex();
+    protected abstract int getIndex();
 
     public BaseAbstract(double baseSalary, String name, int numberOfSubordinates) {
         super(baseSalary, name);
