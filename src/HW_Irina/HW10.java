@@ -121,8 +121,8 @@ public class HW10 {
     }
 
     public static boolean returnWhatFirstLetter(String a, String b) {
-        Boolean result = false;
-        if (a.length() != 0 && b.length() != 0 && !a.equals(null) && !b.equals(null) && a.length() == 1 && b.length() == 1){
+        boolean result = false;
+        if (a.length() != 0 && b.length() != 0 && a != null && b != null && a.length() == 1 && b.length() == 1){
             if ((int)a.charAt(0) < (int)b.charAt(0)){
                 return result = true;
             }else
