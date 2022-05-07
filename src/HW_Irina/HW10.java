@@ -1,6 +1,7 @@
 package HW_Irina;
 
 import HW_Irina.hw8.HW8;
+import HW_Sergei.HW_9.BaseAbstract;
 import Utils.Utils;
 
 import java.util.Arrays;
@@ -120,8 +121,14 @@ public class HW10 {
     }
 
     public static boolean returnWhatFirstLetter(String a, String b) {
-
-        return a.charAt(0) < b.charAt(0);
+        Boolean result = false;
+        if (a.length() != 0 && b.length() != 0 && !a.equals(null) && !b.equals(null) && a.length() == 1 && b.length() == 1){
+            if ((int)a.charAt(0) < (int)b.charAt(0)){
+                return result = true;
+            }else
+                return result = false;
+        }
+        return result;
     }
 
     public static void main(String[] args) {
