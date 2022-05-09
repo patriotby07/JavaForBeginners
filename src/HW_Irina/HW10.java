@@ -126,7 +126,7 @@ public class HW10 {
             if ((int)a.charAt(0) < (int)b.charAt(0)){
                 return result = true;
             }else
-                return result = false;
+                return false;
         }
         return result;
     }
@@ -279,7 +279,7 @@ public class HW10 {
         System.out.println("Проверка длинны текста - " + new String().length());
         System.out.println("Проверка с какого элемента начинается опред. часть текста - " + test3.indexOf("good"));
         System.out.println("Печать определенной части текста - " + test3.substring(test3.indexOf("good"), test3.indexOf("good") + 4));
-        System.out.println("При отсутствии в тексте передаваемых букв - " + test3.indexOf("zz"));
+        System.out.println("При отсутствии в тексте передаваемых букв - " + test3.indexOf("aaa"));
         System.out.print("Поиск последней встречающейся буквы - " + test3.lastIndexOf("a"));
 
         Utils.printNumber(10);
