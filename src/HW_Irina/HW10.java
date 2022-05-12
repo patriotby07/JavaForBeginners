@@ -1,11 +1,7 @@
 package HW_Irina;
-
-import HW_Irina.hw8.HW8;
-import HW_Sergei.HW_9.BaseAbstract;
 import Utils.Utils;
-
 import java.util.Arrays;
-import java.util.Locale;
+
 
 public class HW10 {
     Utils utils = new Utils();
@@ -347,7 +343,5 @@ public class HW10 {
          * method(“m”, “l”) → false **/
         System.out.println(returnWhatFirstLetter("a", "m"));
         System.out.println(returnWhatFirstLetter("m", "l"));
-
-
     }
 }
