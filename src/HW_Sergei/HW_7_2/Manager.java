@@ -1,6 +1,6 @@
 package HW_Sergei.HW_7_2;
 
-public class Manager extends Worker{
+public class Manager extends Worker implements IManager{
 
     private int numberOfSubordinates;
 
@@ -9,6 +9,7 @@ public class Manager extends Worker{
         this.numberOfSubordinates = numberOfSubordinates;
     }
 
+    @Override
     public int getNumberOfSubordinates() {
         return numberOfSubordinates;
     }
@@ -17,6 +18,7 @@ public class Manager extends Worker{
         this.numberOfSubordinates = numberOfSubordinates;
     }
 
+    @Override
     public double getSalary() {
         if (getNumberOfSubordinates() == 0) {
             return getBaseSalary();

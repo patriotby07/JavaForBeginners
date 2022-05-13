@@ -5,10 +5,11 @@ public class Main {
         Employee employees = new Employee("Sergey", 31, 'm',500);
         Manager manager = new Manager("Sergey", 31, 'm',500, 3);
 
-        Month[] months = {
-                new Month("Jan", 31, 21),
-                new Month("Feb", 28, 20),
+        IMonth[] months = {
+                MonthUtils.getMonth(1),
+                MonthUtils.getMonth(2)
         };
+
         System.out.println(employees.getSalary(months));
         System.out.println(manager.getSalary(months));
     }

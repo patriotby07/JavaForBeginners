@@ -46,7 +46,7 @@ public class Employee {
         this.salary = salary;
     }
 
-    public double getSalary (Month[] monthArray) {
+    public double getSalary (IMonth[] monthArray) {
         double result = 0;
         for (int i = 0; i < monthArray.length ; i++) {
            result += getSalary() * monthArray[i].getWorkDays();
