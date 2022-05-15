@@ -1,10 +1,23 @@
 package HW_Irina;
+
 import Utils.Utils;
+
 import java.util.Arrays;
 
 
 public class HW10 {
     Utils utils = new Utils();
+
+    public static boolean isStringValid(String str) {
+        if (str != null) {
+            if (!str.isEmpty()) {
+
+                return true;
+            }
+            return false;
+        }
+        return false;
+    }
 
     public static String removingAndCheckingSpaces(String str) {
         String message = "";
@@ -21,37 +34,66 @@ public class HW10 {
     }
 
     public static String removeAlla(String str) {
+        if (str != null && str.length() > 0) {
 
-        return str.strip().replace("a", "");
+            return str.strip().replace("a", "");
+        }
+
+        return "";
     }
 
     public static String removeAllZeros(String str) {
+        if (str != null && str.length() > 0) {
 
-        return str.replace(" ", "").replace("0", "");
+            return str.trim().replace(" ", "").replace("0", "");
+        }
+
+        return "";
     }
 
     public static String removeAllSpaces(String str) {
+        if (str != null && str.length() > 0) {
 
-        return str.replace(" ", "");
+            return str.trim().replace(" ", "");
+        }
+
+        return "";
     }
 
     public static int returnNumberOfLetters(String str) {
         int countA = 0;
 
-        if (str != null) {
+        if (str != null && str.length() > 0) {
+            str = str.toLowerCase();
+
             for (int i = 0; i < str.length(); i++) {
-                if (str.toLowerCase().charAt(i) == 'a') {
+                if (str.charAt(i) == 'a') {
                     countA++;
                 }
             }
+
             return countA;
         }
+
+        return 0;
+    }
+
+    public static int returnNumberOfLetters2(String str) {
+        if (str != null && str.length() > 0) {
+
+            return str.length() - str.toLowerCase().replace("a", "").length();
+        }
+
         return 0;
     }
 
     public static boolean findEverythingJava(String str) {
+        if (isStringValid(str)) {
 
-        return str.toLowerCase().contains("java");
+            return str.toLowerCase().contains("java");
+        }
+
+        return false;
     }
 
     public static String addQuotesAndDot(String str) {
@@ -62,10 +104,14 @@ public class HW10 {
     }
 
     public static String fixNameCity(String str) {
-        char part = str.trim().toUpperCase().charAt(0);
-        String part1 = str.trim().substring(1).toLowerCase();
+        if (isStringValid(str)) {
+            char part = str.trim().toUpperCase().charAt(0);
+            String part1 = str.trim().substring(1).toLowerCase();
 
-        return part + part1;
+            return part + part1;
+        }
+
+        return "";
     }
 
     public static String returnPartText(String str, char chr) {
@@ -75,30 +121,32 @@ public class HW10 {
         return str.substring(a, b + 1);
     }
 
-    public static boolean returnSameLetter(String str) {
+    public static boolean isReturnSameLetter(String str) {
 
-        if (str == null || str.length() == 0) {
-
-            return false;
-        } else
+        if (isStringValid(str)) {
 
             return str.trim().toLowerCase().substring(0, 1).equals(str.trim().substring(str.trim().length() - 1));
+        } else
+
+            return false;
     }
 
     public static String[] returnArrayText(String str) {
-
-        return str.split(" ");
+        if (isStringValid(str)) {
+            return str.split(" ");
+        }
+        return new String[]{};
     }
 
     public static String[] returnFullName(String str) {
         String fio = "Имя: Фамилия: Отчество:";
-        String[] fullname = fio.split(" ");
+        String[] fullName = fio.split(" ");
         String[] s = str.split(" ");
+    //можно проверку всунуть и использовать метод выше с обращением к каждому элементу
+        String[] arr = new String[fullName.length];
 
-        String[] arr = new String[fullname.length];
-
-        for (int i = 0; i < fullname.length; i++) {
-            arr[i] = fullname[i].concat(" ").concat(s[i]);
+        for (int i = 0; i < fullName.length; i++) {
+            arr[i] = fullName[i].concat(" ").concat(s[i]);
         }
         return arr;
     }
@@ -118,10 +166,10 @@ public class HW10 {
 
     public static boolean returnWhatFirstLetter(String a, String b) {
         boolean result = false;
-        if (a.length() != 0 && b.length() != 0 && a != null && b != null && a.length() == 1 && b.length() == 1){
-            if ((int)a.charAt(0) < (int)b.charAt(0)){
+        if (a != null && b != null && a.length() != 0 && b.length() != 0 && a.length() == 1 && b.length() == 1) {
+            if ((int) a.charAt(0) < (int) b.charAt(0)) {
                 return result = true;
-            }else
+            } else
                 return false;
         }
         return result;
@@ -175,6 +223,7 @@ public class HW10 {
          * “ 0000000111“ → “111” **/
         System.out.println(removeAllZeros("   3 5 0 4 2 0 9 7 0 6 0 4 0       0 0 0 "));
         System.out.print(removeAllZeros(" 0000000111"));
+        System.out.println(removeAllZeros(null));
 
         Utils.printNumber(4);
         /** 4. Написать алгоритм RemoveAllSpaces.
@@ -185,6 +234,7 @@ public class HW10 {
          * “p a     n d a   “ → “panda” **/
         System.out.println(removeAllSpaces("    QA   4  Everyone   "));
         System.out.print(removeAllSpaces("p a     n d a   "));
+        System.out.println(removeAllSpaces(""));
 
         Utils.printNumber(5);
         /** 5. Напишите метод, который принимает на вход строку и считает, сколько букв а или А содержится в строке.
@@ -195,6 +245,8 @@ public class HW10 {
         System.out.println(returnNumberOfLetters("Homenum Revelio"));
         System.out.println(returnNumberOfLetters(null));
         System.out.println(returnNumberOfLetters(""));
+        System.out.println(returnNumberOfLetters2("Abracadabra"));
+        System.out.println(returnNumberOfLetters2("Homenum Revelio"));
         System.out.println();
 
         System.out.println("----Дополнительный материал----");
@@ -221,7 +273,7 @@ public class HW10 {
                 "otherwise still support Java 8 with public updates for personal use indefinitely. Other " +
                 "vendors have begun to offer zero-cost builds of OpenJDK 8 and 11 that are still receiving " +
                 "security and other upgrades."));
-        System.out.print(findEverythingJava("As a decrepit father takes delight\n" +
+        System.out.println(findEverythingJava("As a decrepit father takes delight\n" +
                 "To see his active child do deeds of youth,\n" +
                 "So I, made lame by fortune’s dearest spite,\n" +
                 "Take all my comfort of thy worth and truth.\n" +
@@ -235,6 +287,7 @@ public class HW10 {
                 "And by a part of all thy glory live.\n" +
                 "Look what is best, that best I wish in thee.\n" +
                 "This wish I have; then ten times happy me."));
+        System.out.print(findEverythingJava(null));
 
         Utils.printNumber(7);
         /** 7. Напишите метод, который принимает на вход строку, и добавляет Кавычки в начале строки, точку и кавычки в
@@ -253,7 +306,8 @@ public class HW10 {
 
         System.out.println(fixNameCity("ЧикаГО"));
         System.out.println(fixNameCity("  БуХаЛоВкА   "));
-        System.out.print(fixNameCity("ташкент"));
+        System.out.println(fixNameCity("ташкент"));
+        System.out.print(fixNameCity(null));
 
         Utils.printNumber(9);
         /** 9. Напишите метод, который принимает на вход строку, и возвращает все, что находится между первой и последней буквой-параметром:
@@ -263,6 +317,7 @@ public class HW10 {
          */
         System.out.println(returnPartText("Abracadabra", 'b'));
         System.out.println(returnPartText("Whippersnapper", 'p'));
+        System.out.println(returnPartText("Hello", 'H'));
         System.out.println();
 
         System.out.println("----Дополнительный материал----");
@@ -285,11 +340,11 @@ public class HW10 {
          * 	“Abracadabra” → true
          * 	“Whippersnapper” → false **/
 
-        System.out.println(returnSameLetter("Abracadabra"));
-        System.out.println(returnSameLetter("   Abracadabra   "));
-        System.out.println(returnSameLetter("Whippersnapper"));
-        System.out.println(returnSameLetter(null));
-        System.out.print(returnSameLetter(""));
+        System.out.println(isReturnSameLetter("Abracadabra"));
+        System.out.println(isReturnSameLetter("   Abracadabra   "));
+        System.out.println(isReturnSameLetter("Whippersnapper"));
+        System.out.println(isReturnSameLetter(null));
+        System.out.print(isReturnSameLetter(""));
 
         Utils.printNumber(11);
         /** 11. Напишите метод, который принимает на вход предложение и возвращает слова из этого предложения в виде массива слов
@@ -297,6 +352,8 @@ public class HW10 {
          * “QA for Everyone” → {“QA”, “for”, “Everyone”} **/
         System.out.println(Arrays.toString(returnArrayText("QA for Everyone")));
         System.out.println(Arrays.toString(returnArrayText("Александр Сергеевич Пушкин")));
+        System.out.println(Arrays.toString(returnArrayText("")));
+        System.out.println(Arrays.toString(returnArrayText(null)));
         System.out.println();
 
         System.out.println("----Дополнительный материал----");
@@ -343,5 +400,7 @@ public class HW10 {
          * method(“m”, “l”) → false **/
         System.out.println(returnWhatFirstLetter("a", "m"));
         System.out.println(returnWhatFirstLetter("m", "l"));
+        System.out.println(returnWhatFirstLetter("mdf", "ldd"));
+        System.out.println(returnWhatFirstLetter(null, "l"));
     }
 }
