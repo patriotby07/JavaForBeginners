@@ -259,7 +259,7 @@ public class HW10 {
         System.out.println("Проверяет строку на наличие символа или последовательности символов, возврат boolean - " + test.contains("h"));
         System.out.println("Перевод всех букв в строчные - " + test.toLowerCase());
         System.out.println("Перевод всех букв в заглавные - " + test.toUpperCase());
-        System.out.println("Поиск букв в тексте(важен регистр букв) - " + test.contains("h"));
+        System.out.println("Поиск букв в тексте(важен регистр букв) - " + test.contains(""));
         System.out.println("Поиск букв в тексте(важен регистр букв) - " + test.toLowerCase().contains("h"));
         System.out.println("Получение символа из строки - " + test.charAt(1));
         System.out.println("Получение части текста из строки, начиная с указанного индекса - " + test.substring(2));

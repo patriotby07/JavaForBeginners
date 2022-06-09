@@ -1,4 +1,4 @@
-package Lesson.Lesson10StringChsr;
+package Lesson.Lesson10StringChar;
 
 import java.util.Arrays;
 
