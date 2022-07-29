@@ -116,5 +116,12 @@ public class Epam {
         System.out.println(d);
 
         double cubingNumber = Math.pow(3, 2);
+
+
+
+
+
+
+
     }
 }
