@@ -107,14 +107,9 @@ public class Epam {
         System.out.println("---------bubbleSortSmallVersion-----------");
         bubbleSortSmallVersion(bubbleArray);
 
-
-        String a = "Igor";
-        String b = "Igor";
-
-        boolean d = a==b;
-
-        System.out.println(d);
-
-        double cubingNumber = Math.pow(3, 2);
+        int experience = 5;
+        int requirements = 10;
+        String result = (experience > requirements) ? "Accept to project" : "Learn more" ;
+        System.out.println( result );
     }
 }
